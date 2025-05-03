@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="theme-toggle">
+            <button id="themeBtn"><i class="fas fa-moon"></i></button>
+        </div>
+        
+        <div class="app-layout">
+            <aside class="sidebar">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <h2 id="currentMonthYear">Month 2023</h2>
+                        <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid" id="calendarDays"></div>
+                </div>
+                
+                <div class="stats-container">
+                    <h3>Productivity Stats</h3>
+                    <div class="stat-item">
+                        <span>Tasks Completed:</span>
+                        <span id="completedCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Due Today:</span>
+                        <span id="dueTodayCount">0</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="todo-app">
+                <header class="app-header">
+                    <h1 id="currentDate">Today, Day Month Year</h1>
+                    <div class="input-container">
+                        <input type="text" id="taskInput" placeholder="What needs to be done?" autocomplete="off">
+                        <div class="date-picker-container">
+                            <input type="date" id="taskDueDate">
+                            <button id="addTaskBtn"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="todo-content">
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="today">Today</button>
+                        <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+
+                    <ul id="taskList"></ul>
+
+                    <div class="task-stats">
+                        <span id="tasksLeft">0 items left</span>
+                        <button id="clearCompleted">Clear completed</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
